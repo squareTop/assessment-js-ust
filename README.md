@@ -8,7 +8,7 @@ Please read through NodeJS_Assessment.pdf carefully before you attempt.
 
 ## Prerequisites
 - NodeJS v12.18.0
-- Docker
+- Docker v19.03.12
 
 <br>
 
@@ -47,6 +47,8 @@ This will start all the dependencies services i.e. database.
 npm start
 ```
 
+Note: Upon running 'npm start', mysql container is created with 5 tables - registrations, classes, students, subjects and teachers - if it does not already exist.
+
 <br>
 
 ### Running in watch mode
@@ -72,6 +74,23 @@ http://localhost:3000/api/healthcheck
 You can place your database migration scripts in javascript/database folder. <br>
 It will be ran the first time MySQL docker container is first initialised. <br><br>
 Please provide the instruction on how to initialise the database if you are not using the above method.
+
+Useful docker commands.
+```bash
+docker ps -a
+docker exec -it school-administration-system-mysql bash
+```
+
+Useful linux commands.
+```bash
+mysql -u root -p
+```
+
+Useful sql commands.
+```bash
+use school-administration-system
+show tables;
+```
 
 <br>
 
