@@ -26,7 +26,7 @@ Please read through NodeJS_Assessment.pdf carefully before you attempt.
 | S/N | Application | Exposed Port |
 |-----|-------------|--------------|
 | 1 | database | 33306 |
-| 2 | applicaiton | 3000 |
+| 2 | applicaton | 3000 |
 
 <br>
 
@@ -87,10 +87,10 @@ mysql -u root -p
 ```
 
 Useful sql commands.
-```bash
+~~~~mysql
 use school-administration-system
 show tables;
-```
+~~~~
 
 <br>
 

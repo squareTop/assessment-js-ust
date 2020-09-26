@@ -7,6 +7,6 @@ const healthcheckHandler = async (req, res) => {
   return res.sendStatus(OK);
 }
 
-HealthcheckController.get('/healthcheck', healthcheckHandler);
+HealthcheckController.get('/', healthcheckHandler);
 
 export default HealthcheckController;
