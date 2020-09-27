@@ -4,7 +4,8 @@ module.exports = (sequelize, DataTypes) => {
     // Model attributes are defined here
     teacherEmail: {
       type: DataTypes.STRING,
-      primaryKey: true
+      primaryKey: true,
+      allowNull: false
     },
     teacherName: {
       type: DataTypes.STRING,

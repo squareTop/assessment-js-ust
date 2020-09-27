@@ -1,11 +1,12 @@
 import Express from 'express';
 import sequelize from '../config/database';
-// import { OK } from 'http-status-codes';
 import Model from '../models/model';
+import Logger from '../config/logger';
 
 const WorkloadReportController = Express.Router();
-
+const LOG = new Logger('WorklaodReportController.js');
 const workloadReportHandler = async (req, res) => {
+
   try{
     const teachers = await Model.Teacher.findAll();
     const workloads = await Model.Workload.findAll({
@@ -26,10 +27,12 @@ const workloadReportHandler = async (req, res) => {
     return res.json(result);
   }
   catch(err) {
+    LOG.error(err);
     return res.status(500).send(err);
   }
 }
 
+// Helper function to format json response
 function formatResponse(t, w){
   var temp = {};
   for (var i = 0; i < t.length; i++){

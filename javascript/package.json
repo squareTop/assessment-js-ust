@@ -32,6 +32,7 @@
     "@babel/preset-env": "^7.10.4",
     "eslint": "^7.4.0",
     "jest": "^26.1.0",
-    "nodemon": "^2.0.4"
+    "nodemon": "^2.0.4",
+    "supertest": "^5.0.0"
   }
 }

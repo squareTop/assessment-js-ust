@@ -47,7 +47,7 @@ This will start all the dependencies services i.e. database.
 npm start
 ```
 
-Note: Upon running 'npm start', mysql container is created with 5 tables - registrations, classes, students, subjects and teachers - if it does not already exist.
+Note: Upon running 'npm start', mysql container is created with 6 tables - registrations, workloads, classes, students, subjects and teachers - if it does not already exist.
 
 <br>
 
@@ -55,6 +55,16 @@ Note: Upon running 'npm start', mysql container is created with 5 tables - regis
 This will start the application in watch mode.
 ```bash
 npm run start:dev
+```
+
+<br>
+
+### Running tests
+This will run tests defined in the /tests directory.
+File 'api.test.js' contains 3 tests, one for each endpoint.
+Note that you need to run the server and container via 'npm start' prior to testing.
+```bash
+npm test
 ```
 
 <br>

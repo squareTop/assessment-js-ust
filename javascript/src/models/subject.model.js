@@ -4,6 +4,7 @@ module.exports = (sequelize, DataTypes) => {
     // Model attributes are defined here
     subjectCode: {
       type: DataTypes.STRING,
+      allowNull: false,
       primaryKey: true
     },
     subjectName: {

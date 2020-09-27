@@ -1,11 +1,11 @@
 import Express from 'express';
-import sequelize from '../config/database';
-// import { OK } from 'http-status-codes';
 import Model from '../models/model';
+import Logger from '../config/logger';
 
 const RegistrationController = Express.Router();
-
+// const LOG = new Logger('RegistrationController.js');
 const registrationHandler = async (req, res) => {
+
   try{
     res.status(204);
     try{
@@ -15,7 +15,7 @@ const registrationHandler = async (req, res) => {
         teacherName: req.body.teacher.name
       });
     } catch(e){
-      console.log('Error Teachers table: ', e);
+      LOG.error('Error inserting into Teachers table');
       res.status(400);
     }
     try{
@@ -25,7 +25,7 @@ const registrationHandler = async (req, res) => {
         subjectName: req.body.subject.name
       });
     } catch(e){
-      console.log('Error Subject table: ', e);
+      LOG.error('Error inserting into Subject table');
       res.status(400);
     }
     try{
@@ -35,7 +35,7 @@ const registrationHandler = async (req, res) => {
         className: req.body.class.name
       });
     } catch(e){
-      console.log('Error Class table: ', e);
+      LOG.error('Error inserting into Class table');
       res.status(400);
     }
     try{
@@ -47,7 +47,7 @@ const registrationHandler = async (req, res) => {
         })
       }
     } catch(e){
-      console.log('Error Student table: ', e);
+      LOG.error('Error inserting into Student table');
       res.status(400);
     }
     try{
@@ -58,7 +58,7 @@ const registrationHandler = async (req, res) => {
         classCode: req.body.class.classCode
       });
     } catch(e){
-      console.log('Error Workload table: ', e);
+      LOG.error('Error inserting into Workload table');
       res.status(400);
     }
     try{
@@ -72,11 +72,11 @@ const registrationHandler = async (req, res) => {
         })
       }
     } catch(e){
-      console.log('Error Registration table: ', e);
+      LOG.error('Error inserting into Registration table');
       res.status(400);
     }
     // Will be set to 400 if any error
-    return res.send('Updated')
+    return res.send();
   }
   catch(err) {
     return res.status(500).send(err);
